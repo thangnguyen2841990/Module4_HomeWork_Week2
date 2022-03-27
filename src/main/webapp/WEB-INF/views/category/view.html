@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/category/layout::head"></head>
+<body>
+<div th:replace="/category/layout::header"></div>
+<form method="post" th:object="${category}" enctype="multipart/form-data">
+    <fieldset>
+        <legend><h3>THÔNG TIN DANH MỤC</h3></legend>
+        <div class="input-info">
+            <lable for="name"><h5>Tên danh mục</h5></lable>
+            <input type="text" disabled id="name" th:field="*{name}">
+        </div>
+    </fieldset>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/category/layout::head"></head>
+<body>
+<div th:replace="/category/layout::header"></div>
+<br>
+
+
+<br>
+<lable for="create"><h5>Thêm mới danh mục</h5></lable>
+<a id="create" th:href="@{/categories/create}">
+    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+</a>
+<br>
+<br>
+<a th:href="@{/products}">
+    <button class="btn btn-primary">Đi đến quản lý sản phẩm</button></a>
+
+<br>
+<br>
+<fieldset>
+    <legend><h3>DANH SÁCH DANH MỤC</h3></legend>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>STT</th>
+            <th>Tên danh mục</th>
+            <th>Sửa/Xóa</th>
+
+        </tr>
+        <tr th:each="category,categoryStatus : ${categories}">
+            <td th:text="${categoryStatus.count}"></td>
+            <td th:text="${category.name}"></td>
+            <td>
+                <a th:href="@{/categories/edit/__${category.id}__}">
+                    <button class="btn btn-primary"><i class="fa-solid fa-file-pen"></i></button>
+                </a>
+                <a th:href="@{/categories/delete/__${category.id}__}">
+                    <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                </a>
+            </td>
+        </tr>
+
+
+    </table>
+</fieldset>
+</body>
+</html>
