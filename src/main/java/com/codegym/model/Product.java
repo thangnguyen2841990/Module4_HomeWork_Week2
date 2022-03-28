@@ -1,16 +1,23 @@
 package com.codegym.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotEmpty //Không được để trống và không đc nhập chuỗi rỗng
     private String name;
+    @NotNull
+    @Max(200000)
+    @Min(0)
     private double price;
+    @NotNull
     private int quantity;
     private String description;
+    @NotEmpty
     private String image;
     @ManyToOne
     private Category category;

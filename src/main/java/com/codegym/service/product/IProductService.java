@@ -11,4 +11,6 @@ public interface IProductService extends IGeneralService<Product> {
 
     Page<Product> findByCategory(Long categoryId, Pageable pageable);
 
+
+
 }

@@ -69,7 +69,7 @@ public class CategoryController {
     }
     @PostMapping("/delete/{id}")
     private ModelAndView deleteCategory(@PathVariable Long id){
-        this.categoryService.deleteById(id);
+        this.categoryService.deleteCategory(id);
         ModelAndView modelAndView = new ModelAndView("redirect:/categories");
         return modelAndView;
     }
